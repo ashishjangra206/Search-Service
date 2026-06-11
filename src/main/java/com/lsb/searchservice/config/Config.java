@@ -1,5 +1,7 @@
 package com.lsb.searchservice.config;
 
+import feign.Retryer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -16,4 +18,10 @@ public class Config implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowCredentials(true);
     }
+
+    @Bean
+    public Retryer FeignRetryer() {
+        return Retryer.NEVER_RETRY;
+    }
+
 }

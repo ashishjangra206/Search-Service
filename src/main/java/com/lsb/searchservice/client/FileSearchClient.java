@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "File-Service", url = "http://localhost:8081")
+@FeignClient(name = "File-Service", url = "http://localhost:8081", fallback =  FileServiceClientFallBack.class)
 public interface FileSearchClient {
 
     @GetMapping("/api/files")

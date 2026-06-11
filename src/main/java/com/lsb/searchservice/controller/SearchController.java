@@ -2,6 +2,9 @@ package com.lsb.searchservice.controller;
 
 import com.lsb.searchservice.client.FileSearchClient;
 import com.lsb.searchservice.client.FolderSearchClient;
+import io.github.resilience4j.circuitbreaker.CircuitBreaker;
+import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
